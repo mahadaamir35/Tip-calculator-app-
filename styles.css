@@ -1,0 +1,233 @@
+:root {
+    --strongcyan: hsl(172, 67%, 45%);
+    --verydarkcyan: hsl(183, 100%, 15%);
+    --darkgrayishcyan: hsl(186, 14%, 43%);
+    --grayishcyan: hsl(184, 14%, 56%);
+    --lightgrayishcyan: hsl(185, 41%, 84%);
+    --verylightgrayishcyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--lightgrayishcyan);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    padding-top: 3rem;
+}
+
+
+
+.main-h1 {
+    text-align: center;
+    color: var(--darkgrayishcyan);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-size: 2rem;
+}
+
+
+.parent-container {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+.user-input h1 {
+    margin-top: 1.5rem;
+    color: var(--darkgrayishcyan);
+    font-size: 1.25rem;
+
+}
+
+label {
+    color: var(--darkgrayishcyan);
+    font-size: 1.25rem;
+}
+
+.label-0 {
+    color: rgba(255, 0, 0, 0.7);
+    margin-left: 30px;
+    display: none;
+}
+
+#bill,
+#people {
+    display: block;
+    margin-top: 0.5rem;
+    width: 80%;
+    max-width: 400px;
+    text-align: end;
+    padding: 0.4rem 1rem;
+    position: relative;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    outline: none;
+    background-color: var(--verylightgrayishcyan);
+    border: 1px solid var(--verylightgrayishcyan);
+    color: var(--verydarkcyan);
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+#bill:hover,
+#people:hover {
+    border: 1px solid var(--strongcyan);
+}
+
+img {
+    position: absolute;
+    transform: translateY(-3.5rem) translateX(1rem);
+    height: 1.25rem;
+}
+
+
+.buttons-container {
+    margin: 1rem 0rem;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    justify-items: start;
+    margin-bottom: 2rem;
+}
+
+.buttons-container button {
+    padding: 0.5rem 0rem;
+    background-color: var(--verydarkcyan);
+    color: var(--white);
+    font-size: 1.25rem;
+    border: 1px solid var(--verydarkcyan);
+    border-radius: 4px;
+    cursor: pointer;
+    width: 90%;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--lightgrayishcyan);
+    border: 1px solid var(--lightgrayishcyan);
+    color: var(--verydarkcyan);
+}
+
+.buttons-container .button-clicked {
+    background-color: var(--strongcyan);
+    border-color: var(--strongcyan);
+    color: var(--verydarkcyan);
+}
+
+.buttons-container input {
+    padding: 0.45rem 0rem;
+    font-size: 1.25rem;
+    width: 90%;
+    cursor: pointer;
+    outline: none;
+    background-color: var(--verylightgrayishcyan);
+    border: 1px solid var(--verylightgrayishcyan);
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+}
+
+
+.buttons-container input:hover {
+    border: 1px solid var(--strongcyan);
+}
+
+.calculation-div {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    flex-direction: column;
+    background-color: var(--verydarkcyan);
+    border: 1px solid var(--verydarkcyan);
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    padding-top: 1.5rem;
+}
+
+.calculation-div h1 {
+    color: var(--white);
+    font-size: 1rem;
+}
+
+
+.calculation-div p {
+    color: var(--grayishcyan);
+}
+
+.calculation-div h2 {
+    font-size: 2rem;
+    align-self: flex-end;
+    position: relative;
+    transform: translateY(-50px);
+    color: var(--strongcyan);
+}
+
+.calculation-div .reset-button {
+    padding: 0.75rem 0rem;
+    background-color: var(--strongcyan);
+    border: 1px solid var(--strongcyan);
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--verydarkcyan);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.calculation-div .reset-button:hover {
+    background-color: var(--lightgrayishcyan);
+    border-color: var(--lightgrayishcyan);
+}
+
+@media(min-width: 1100px) {
+    body {
+        justify-content: center;
+    }
+
+    .parent-container {
+        flex-direction: row;
+        justify-content: center;
+        width: 70%;
+    }
+
+    .calculation-div {
+        height: 30rem;
+        padding-top: 3rem;
+        margin-left: 10px;
+    }
+
+    .calculation-div .reset-button {
+        justify-self: flex-end;
+        margin-top: 8rem;
+    }
+
+    .calculation-div h2 {
+        font-size: 2.5rem;
+    }
+
+    .buttons-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
